@@ -25,7 +25,7 @@
           <img src="https://picsum.photos/185/185" alt="Foto pessoal" />
         </div>
 
-        <h1>Victor Kauan</h1>
+        <h1 id="userName">Victor Kauan</h1>
 
         <a href="https://github.com/victorkauan" target="_blank">
           <img src="images/github.svg" alt="Ícone do GitHub" />
@@ -34,23 +34,23 @@
 
         <p>An instructor focused on helping people start programming for web</p>
 
-        <ul>
-          <li>
+        <ul id="socialLinks">
+          <li class="youtube">
             <a href="https://youtube.com/rocketseat" target="_blank">
               <img src="images/youtube.svg" alt="Ícone do YouTube" />
             </a>
           </li>
-          <li>
+          <li class="instagram">
             <a href="https://instagram.com/rocketseat_oficial" target="_blank">
               <img src="images/instagram.svg" alt="Ícone do Instagram" />
             </a>
           </li>
-          <li>
+          <li class="facebook">
             <a href="https://facebook.com/rocketseat" target="_blank">
               <img src="images/facebook.svg" alt="Ícone do Facebook" />
             </a>
           </li>
-          <li>
+          <li class="twitter">
             <a href="https://twitter.com/rocketseat" target="_blank">
               <img src="images/twitter.svg" alt="Ícone do Twitter" />
             </a>
@@ -58,5 +58,27 @@
         </ul>
       </div>
     </main>
+
+    <script>
+      const linksSocialMedia = {
+        github: 'victorkauan',
+        youtube: 'rocketseat',
+        instagram: 'vict0rkauan',
+        facebook: 'rocketseat',
+        twitter: 'vict0rkauan'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+
+          li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+
+          alert(li.children[0].href)
+        }
+      }
+
+      changeSocialMediaLinks()
+    </script>
   </body>
 </html>
